@@ -1,0 +1,19 @@
+server:  port: 8080
+
+logging:
+  config: classpath:log4j2.xmlspring:  jackson:    default-property-inclusion: non-null
+
+calculator:
+  reject:
+    weight: 50.0   # Reject rule: Weight exceeds 50kg
+  heavy:
+    weight: 10.0   # Heavy parcel: Weight exceeds 10kg
+    factor: 20.0   # Heavy parcel factor 20.0
+  small:
+    volume: 1500.0 # Small parcel: Volume less than 1500cm^3
+    factor: 0.03   # Small parcel factor 0.03
+  medium:
+    volume: 2500.0 # Medium parcel: Volume less then 2500cm^3
+    factor: 0.04   # Medium parcel factor 0.04
+  large:
+    factor: 0.05   # Large parcel factor 0.05voucher:  service:    url: https://mynt-exam.mocklab.io/voucher/{0}?key=apikey # Voucher service URL    check:      expiry: false # Check the expiry date for the voucher

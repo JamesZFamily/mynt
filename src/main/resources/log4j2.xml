@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="5">
+	<Properties>
+		<Property name="stdLayoutPattern">%d %p %c - %m%n</Property>
+	</Properties>
+
+	<Appenders>
+		<Console name="stdout" target="SYSTEM_OUT">
+			<PatternLayout pattern="${stdLayoutPattern}" />
+		</Console>
+	</Appenders>
+
+	<Loggers>
+		<Root level="warn">
+			<AppenderRef ref="stdout" />
+		</Root>
+
+		<Logger name="com.mynt.calculator" level="debug" />
+
+	</Loggers>
+</Configuration>
